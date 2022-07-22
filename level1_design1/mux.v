@@ -13,7 +13,7 @@ module mux(sel,inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8,
             inp27, inp28, inp29, inp30;
 
   output reg [1:0] out;
-  //reg [1:0] out;
+  //reg [1:0] out; bug 1(extra reg out varible)
 
   // Based on sel signal value, one of the inp0-inp30 gets assigned to the 
   // output signal
@@ -37,7 +37,7 @@ module mux(sel,inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8,
       5'b01001: out = inp9;  
       5'b01010: out = inp10;
       5'b01011: out = inp11;
-      5'b01100: out = inp12;//error
+      5'b01100: out = inp12;//bug2 (corrected )
       5'b01101: out = inp13;
       5'b01110: out = inp14;
       5'b01111: out = inp15;
@@ -55,7 +55,7 @@ module mux(sel,inp0, inp1, inp2, inp3, inp4, inp5, inp6, inp7, inp8,
       5'b11011: out = inp27;
       5'b11100: out = inp28;
       5'b11101: out = inp29;
-      5'b11110: out = inp30;//added
+      5'b11110: out = inp30;//30th mux input added (bug3)
       default: out = 0;
     endcase
   end
