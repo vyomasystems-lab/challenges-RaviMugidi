@@ -11,8 +11,8 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, Timer
 
 @cocotb.test()
-async def test_seq_bug1(dut):
-    """Test for seq detection """
+async def test_universal_shift_reg(dut):
+    """Test for universal shift register """
 
     clock = Clock(dut.clk, 10, units="us")  # Create a 10us period clock on port clk
     cocotb.start_soon(clock.start())        # Start the clock
