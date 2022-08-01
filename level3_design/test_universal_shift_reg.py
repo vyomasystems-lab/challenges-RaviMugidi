@@ -46,7 +46,7 @@ async def test_universal_shift_reg(dut):
     await Timer(5,units="us")
     await FallingEdge(dut.clk)   
     
-    dut._log.info(f'inp={inp:04} output={out:04} out={int(dut.out.value):04}')
-    assert dut.out.value==out,f"Random test failed" 
+    dut._log.info(f'inp={int(inp):04} sel={sel:04} serial_in={int(s,2):01} output={int(out,2):04} out={int(dut.out.value):04}')
+    assert int(dut.out.value)==int(out,2),f"Random test failed" 
         
         
