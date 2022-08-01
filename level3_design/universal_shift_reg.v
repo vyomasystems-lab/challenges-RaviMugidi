@@ -1,4 +1,4 @@
-module Universal_Reg(clk,serial_in,sel,inp,reset,out);
+module universal_shift__Reg(clk,serial_in,sel,inp,reset,out);
 	input clk;
 	input reset;
 	input serial_in;

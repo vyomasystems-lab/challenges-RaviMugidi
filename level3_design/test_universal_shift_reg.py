@@ -24,7 +24,7 @@ async def test_universal_shift_reg(dut):
     await FallingEdge(dut.clk)
 
     s=random.randint(0,1)
-    dut.serial_in=s
+    dut.serial_in.value=s
     s=bin(s)[2:]
     inp=random.randint(0,15)
     dut.inp.value=inp
@@ -34,9 +34,6 @@ async def test_universal_shift_reg(dut):
     dut.sel.value=sel
     out=bin(0)[2:]
     out=out.zfill(4)
-
-    
-    dut.sel.value=sel
 
     if(sel==0):
        out=out
